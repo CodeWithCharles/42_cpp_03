@@ -6,7 +6,7 @@
 /*   By: cpoulain <cpoulain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/31 13:31:13 by cpoulain          #+#    #+#             */
-/*   Updated: 2025/03/31 14:02:52 by cpoulain         ###   ########.fr       */
+/*   Updated: 2025/03/31 14:00:19 by cpoulain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,10 +55,6 @@ ScavTrap	&ScavTrap::operator=(const ScavTrap &scavTrap)
 	this->_ad = scavTrap._ad;
 	return (*this);
 }
-
-/* -------------------------------------------------------------------------- */
-/*                               Public methods                               */
-/* -------------------------------------------------------------------------- */
 
 void	ScavTrap::guardGate(void)
 {

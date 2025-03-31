@@ -1,33 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpoulain <cpoulain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/31 13:28:21 by cpoulain          #+#    #+#             */
-/*   Updated: 2025/03/31 14:02:57 by cpoulain         ###   ########.fr       */
+/*   Created: 2025/03/31 12:53:55 by cpoulain          #+#    #+#             */
+/*   Updated: 2025/03/31 13:38:01 by cpoulain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_H
-# define SCAVTRAP_H
+#ifndef CLAPTRAP_H
+# define CLAPTRAP_H
 
-# include "ClapTrap.hpp"
+# include <iostream>
+# include <string>
 
-class ScavTrap: public ClapTrap
+class ClapTrap
 {
+	protected:
+		std::string		_name;
+		unsigned int	_hp;
+		unsigned int	_ep;
+		unsigned int	_ad;
 	public:
 /* ------------------------------ Constructors ------------------------------ */
-		ScavTrap(void);
-		ScavTrap(const std::string &name);
-		ScavTrap(const ScavTrap &scavTrap);
+		ClapTrap(void);
+		ClapTrap(const ClapTrap &clapTrap);
+		ClapTrap(const std::string &name);
+		ClapTrap(const std::string &name, const unsigned int hp,
+			const unsigned int ep, const unsigned int ad);
 /* ------------------------------- Destructors ------------------------------ */
-		~ScavTrap(void);
+		~ClapTrap(void);
 /* ---------------------- Assignement operator overload --------------------- */
-		ScavTrap	&operator=(const ScavTrap &scavTrap);
+		ClapTrap	&operator=(const ClapTrap &clapTrap);
 /* ----------------------------- Public methods ----------------------------- */
-		void	guardGate(void);
+		void		attack(const std::string &target);
+		void		takeDamage(unsigned int amount);
+		void		beRepaired(unsigned int amount);
 };
 
 #endif
