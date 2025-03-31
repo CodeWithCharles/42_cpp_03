@@ -6,7 +6,7 @@
 /*   By: cpoulain <cpoulain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/31 12:59:53 by cpoulain          #+#    #+#             */
-/*   Updated: 2025/03/31 13:18:23 by cpoulain         ###   ########.fr       */
+/*   Updated: 2025/03/31 13:24:01 by cpoulain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,26 @@
 /*                                Constructors                                */
 /* -------------------------------------------------------------------------- */
 
-ClapTrap::ClapTrap(void): name("ClapTrap"), hp(10), ep(10), ad(0)
+ClapTrap::ClapTrap(void):	_name("ClapTrap"),
+							_hp(10),
+							_ep(10),
+							_ad(0)
 {
 	std::cout << "ClapTrap default constructor called" << std::endl;
 }
 
-ClapTrap::ClapTrap(const ClapTrap &clapTrap):	name(clapTrap.name),
-												hp(clapTrap.hp),
-												ep(clapTrap.ep),
-												ad(clapTrap.ad)
+ClapTrap::ClapTrap(const ClapTrap &clapTrap):	_name(clapTrap._name),
+												_hp(clapTrap._hp),
+												_ep(clapTrap._ep),
+												_ad(clapTrap._ad)
 {
 	std::cout << "ClapTrap copy constructor called" << std::endl;
 }
 
-ClapTrap::ClapTrap(const std::string &name): name(name), hp(10), ep(10), ad(0)
+ClapTrap::ClapTrap(const std::string &name):	_name(name),
+												_hp(10),
+												_ep(10),
+												_ad(0)
 {
 	std::cout << "ClapTrap name constructor called" << std::endl;
 }
@@ -49,10 +55,10 @@ ClapTrap::~ClapTrap(void)
 
 ClapTrap	&ClapTrap::operator=(const ClapTrap &clapTrap)
 {
-	this->name = clapTrap.name;
-	this->hp = clapTrap.hp;
-	this->ep = clapTrap.ep;
-	this->ad = clapTrap.ad;
+	this->_name = clapTrap._name;
+	this->_hp = clapTrap._hp;
+	this->_ep = clapTrap._ep;
+	this->_ad = clapTrap._ad;
 	return (*this);
 }
 
@@ -62,14 +68,14 @@ ClapTrap	&ClapTrap::operator=(const ClapTrap &clapTrap)
 
 void	ClapTrap::attack(const std::string &target)
 {
-	if (this->hp)
+	if (this->_hp)
 	{
-		std::cout << "ClapTrap " << this->name
+		std::cout << "ClapTrap " << this->_name
 			<< " attacks " << target << ", ";
-		if (this->ep)
+		if (this->_ep)
 		{
-			std::cout << "causing " << this->ad << " points of damage!";
-			this->ep--;
+			std::cout << "causing " << this->_ad << " points of damage!";
+			this->_ep--;
 		}
 		else
 			std::cout << "but has no more energy points ! Attack fails !!";
@@ -79,30 +85,30 @@ void	ClapTrap::attack(const std::string &target)
 
 void	ClapTrap::takeDamage(unsigned int amount)
 {
-	if (this->hp)
+	if (this->_hp)
 	{
-		std::cout << "ClapTrap " << this->name << " takes "
+		std::cout << "ClapTrap " << this->_name << " takes "
 			<< amount << " damage !" << std::endl;
-		if (amount < this->hp)
-			this->hp -= amount;
+		if (amount < this->_hp)
+			this->_hp -= amount;
 		else
 		{
-			std::cout << "ClapTrap " << this->name << " died !" << std::endl;
-			this->hp = 0;
+			std::cout << "ClapTrap " << this->_name << " died !" << std::endl;
+			this->_hp = 0;
 		}
 	}
 }
 
 void	ClapTrap::beRepaired(unsigned int amount)
 {
-	if (this->hp)
+	if (this->_hp)
 	{
-		std::cout << "ClapTrap " << this->name << " repairs himself, ";
-		if (this->ep)
+		std::cout << "ClapTrap " << this->_name << " repairs himself, ";
+		if (this->_ep)
 		{
 			std::cout << "regaining " << amount << " hit points !";
-			this->hp += amount;
-			this->ep--;
+			this->_hp += amount;
+			this->_ep--;
 		}
 		else
 			std::cout << "but has not enough energy, repair failed !";

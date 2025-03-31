@@ -6,7 +6,7 @@
 /*   By: cpoulain <cpoulain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/31 12:53:55 by cpoulain          #+#    #+#             */
-/*   Updated: 2025/03/31 13:12:04 by cpoulain         ###   ########.fr       */
+/*   Updated: 2025/03/31 13:22:05 by cpoulain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@
 class ClapTrap
 {
 	private:
-		std::string		name;
-		unsigned int	hp;
-		unsigned int	ep;
-		unsigned int	ad;
+		std::string		_name;
+		unsigned int	_hp;
+		unsigned int	_ep;
+		unsigned int	_ad;
 	public:
 /* ------------------------------ Constructors ------------------------------ */
 		ClapTrap(void);
