@@ -1,0 +1,2 @@
+FILES	=																	\
+	ClapTrap ScavTrap main													\
