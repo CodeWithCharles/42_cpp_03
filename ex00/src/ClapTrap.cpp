@@ -6,7 +6,7 @@
 /*   By: cpoulain <cpoulain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/31 12:59:53 by cpoulain          #+#    #+#             */
-/*   Updated: 2025/03/31 13:24:01 by cpoulain         ###   ########.fr       */
+/*   Updated: 2025/03/31 13:25:41 by cpoulain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 /*                                Constructors                                */
 /* -------------------------------------------------------------------------- */
 
-ClapTrap::ClapTrap(void):	_name("ClapTrap"),
+ClapTrap::ClapTrap(void):	_name("Unnamed"),
 							_hp(10),
 							_ep(10),
 							_ad(0)
